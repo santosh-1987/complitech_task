@@ -1,0 +1,18 @@
+<% if current_writer.is_admin == true%>
+<table>
+<tr>
+<th>Email</th>
+<th colspan=2>Action</th>
+</tr>
+<tr>
+
+<% @writers.each do |writer| %>
+	<td><%= writer.email%></td>
+	 <td style="text-align: center !important;" ><%= link_to 'Edit', edit_writer_path(writer) %></td>
+	<td style="text-align: center !important;"><%= link_to 'Destroy',writer_path(writer) ,:method => :delete , :data=>{ :confirm=> 'Are you sure?' } %>
+	
+</tr>
+	 <% end %>
+</table>
+<% end %>
+<%= link_to "Back",home_dashboard_path%>
