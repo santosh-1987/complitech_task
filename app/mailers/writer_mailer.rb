@@ -1,4 +1,4 @@
-class UserMailer < ActionMailer::Base
+class WriterMailer < ActionMailer::Base
   default from: "email2jyotisingh@gmail.com"
 
   def invite_confirmation(invitation)

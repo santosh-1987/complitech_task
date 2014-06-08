@@ -7,7 +7,7 @@ end
 def create
   @invitation = Invitation.new(params[:invitation])
    if @invitation.save
-   	UserMailer.invite_confirmation(@invitation).deliver
+   	WriterMailer.invite_confirmation(@invitation).deliver
    redirect_to :back,:notice => "Invitation has been send successfully"
 end
 end

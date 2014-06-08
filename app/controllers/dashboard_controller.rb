@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
 	def index
-		@users=User.all
+		@writers=Writer.all
 	end
 
 end
