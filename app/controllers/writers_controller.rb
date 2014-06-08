@@ -1,5 +1,5 @@
 class WritersController < ApplicationController
-
+skip_before_filter :authenticate_writer!
  def new
   @writer = Writer.new
  end
