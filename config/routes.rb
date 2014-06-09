@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :writers
+  devise_for :writers, :skip => [:sessions]
+  as :writer do
+    get 'login' => 'devise/sessions#new', :as => :new_writer_session
+    post 'login' => 'devise/sessions#create', :as => :writer_session
+    match 'logout' => 'devise/sessions#destroy', :as => :destroy_writer_session,
+          :via => Devise.mappings[:writer].sign_out_via
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :writers
