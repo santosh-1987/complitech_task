@@ -4,7 +4,7 @@ Welcome to admin dashboard
 <%= form_for :invitation,:url=>{:controller=>'invitations',:action =>'create'} do |f| %>
     <p>
       <%= f.label :email, "Your Email:" %>
-      <%= f.text_field :email %>
+      <%= f.text_area :email %>
       <%= f.submit 'Invite' %>
     </p>
 <% end %>
