@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts "Started Rake task for Creating Admin"
-writer = Writer.where(:email => "admin@gmail.com",:password => "admin123",:is_admin => true).first_or_create
+writer = Writer.where(:email => "admin@gmail.com",:password => "admin123",:is_admin => true,:first_name => "Admin").first_or_create
 writer.new_record? ? (puts "Admin Already Present in DB !!!"): (puts "Admin Created Successfully !!!")
