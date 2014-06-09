@@ -2,11 +2,11 @@ Welcome to admin dashboard
 
 <!-- Code For Invite -->
 <%= form_for :invitation,:url=>{:controller=>'invitations',:action =>'create'} do |f| %>
-  <p>
-    <%= f.label :email, "Your Email:" %>
-    <%= f.text_field :email %>
-    <%= f.submit 'Invite' %>
-  </p>
+    <p>
+      <%= f.label :email, "Your Email:" %>
+      <%= f.text_field :email %>
+      <%= f.submit 'Invite' %>
+    </p>
 <% end %>
 
 

@@ -1,19 +1,19 @@
 <%= form_for @writer,:html => { :multipart => true } do |f| %>
-  <p>
+    <p>
 
-    <%= f.label :first_name, "Firstname:" %>
-    <%= f.text_field :first_name %></br>
+      <%= f.label :first_name, "Firstname:" %>
+      <%= f.text_field :first_name %></br>
 
-    <%= f.label :last_name, "Lastname:" %>
-    <%= f.text_field :last_name %></br>
+      <%= f.label :last_name, "Lastname:" %>
+      <%= f.text_field :last_name %></br>
 
-    <%= f.label :screen_name, "Screenname:" %>
-    <%= f.text_field :screen_name %></br>
+      <%= f.label :screen_name, "Screenname:" %>
+      <%= f.text_field :screen_name %></br>
 
-   <%= f.label :sex,"Gender:" %>
-                  Male <%= f.radio_button :sex , "male" %>
-                  Female <%= f.radio_button :sex , "female" %></br>
+      <%= f.label :sex,"Gender:" %>
+      Male <%= f.radio_button :sex , "male" %>
+      Female <%= f.radio_button :sex , "female" %></br>
 
-    <%= f.submit 'Update' %>
-  </p>
+      <%= f.submit 'Update' %>
+    </p>
 <% end %>
