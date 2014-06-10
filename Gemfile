@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
-#gem  'mysql2'
+gem  'mysql2'
 gem "pg"
 gem "rails_12factor"
 gem  'execjs'
