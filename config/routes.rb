@@ -9,11 +9,16 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :writers
-  resources :invitations
+  resources :invitations do
+    collection do
+      get "pending_invitation"
+    end    
+  end
+
   resources :home,:only => [:index] do
     collection do
       get "dashboard"
-      get "invite_writers"
+      get "invite_writers"      
     end
   end
   # get "home/dashboard"

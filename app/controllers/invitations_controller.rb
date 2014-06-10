@@ -32,6 +32,10 @@ class InvitationsController < ApplicationController
     end
   end
 
+  def pending_invitation
+    @invitations = Invitation.all
+  end
+
 end
 
 

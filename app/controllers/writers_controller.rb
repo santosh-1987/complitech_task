@@ -17,7 +17,12 @@ class WritersController < ApplicationController
   end
 
   def index
-    @writers=Writer.all
+  	if current_writer.is_admin == true
+  		@writers=Writer.all
+  	else
+  		flash[:error] = "You dont have access to the requested page [Display all Writers]."
+  		redirect_to root_path
+  	end    
   end
 
   def destroy
