@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :writers
   resources :invitations
-  resources :dashboard
-  get "home/dashboard"
+  resources :home,:only => [:index] do
+    collection do
+      get "dashboard"
+      get "invite_writers"
+    end
+  end
+  # get "home/dashboard"
   # You can have the root of your site routed with "root"
   root 'home#index'
 

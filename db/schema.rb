@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20140609140154) do
 
   create_table "invitations", force: true do |t|
     t.string   "email"
+    t.string   "token"
+    t.boolean  "expired"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

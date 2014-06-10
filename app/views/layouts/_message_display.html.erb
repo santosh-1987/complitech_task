@@ -1,0 +1,7 @@
+<!--# Author: Jyoti Singh-->
+<!--# Date:   10/Jun/2014-->
+<!--# Flash Error, Message, Warning with class in <p> tag -->
+
+<% flash.each do |key, msg| %>
+    <%= content_tag :p, msg.html_safe, class: "#{flash_class(key)}" %>
+<% end %>

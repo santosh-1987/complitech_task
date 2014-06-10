@@ -1,25 +1,58 @@
-<%= form_for @writer,:html => { :multipart => true } do |f| %>
-    <p>
+<div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div style="margin-left: 40px;" class="panel-title"><b>Register with Complitech</b></div>
+    </div>
+  </div>
+  <div class="panel-body" >
+    <%= form_for @writer,:html => { :multipart => true ,:class=>"form-horizontal",role: "form" } do |f| %>
+        <div class="form-group">
+          <%= f.label :email, "Email:",class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            <%= f.text_field :email,class: "form-control",readonly: true %>
+          </div>
+        </div>
 
-      <%= f.label :email, "Email:" %>
-      <%= f.text_field :email %></br>
+        <div class="form-group">
+          <%= f.label :password, "Password:",class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            <%= f.password_field :password,class: "form-control", autofocus: true, autocomplete: "off" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :first_name, "First Name:",class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            <%= f.text_field :first_name,class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, "Last name:",class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            <%= f.text_field :last_name,class: "form-control" %>
+          </div>
+        </div>
 
-      <%= f.label :password, "Password:" %>
-      <%= f.text_field :password,autofocus: true, autocomplete: "off" %></br>
+        <div class="form-group">
+          <%= f.label :screen_name, "Screen name:",class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            <%= f.text_field :screen_name,:class => "form-control" %>
+          </div>
+        </div>
 
-      <%= f.label :first_name, "Firstname:" %>
-      <%= f.text_field :first_name %></br>
+        <div class="form-group">
+          <%= f.label :sex, "Gender:",class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            Male <%= f.radio_button :sex , "male" %>
+            Female <%= f.radio_button :sex , "female" %>
+          </div>
+        </div>
 
-      <%= f.label :last_name, "Lastname:" %>
-      <%= f.text_field :last_name %></br>
-
-      <%= f.label :screen_name, "Screenname:" %>
-      <%= f.text_field :screen_name %></br>
-
-      <%= f.label :sex,"Gender:" %>
-      Male <%= f.radio_button :sex , "male" %>
-      Female <%= f.radio_button :sex , "female" %></br>
-
-      <%= f.submit 'Submit' %>
-    </p>
-<% end %>
+        <div class="form-group">
+          <!-- Button -->
+          <div class="col-md-offset-3 col-md-9">
+            <%= f.submit 'Submit',class: "btn btn-info" %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
