@@ -1,7 +1,7 @@
 class WritersController < ApplicationController
   skip_before_filter :authenticate_writer!, :only=> [:new,:create]
   def new
-    if params[:identity].present?
+    if params[:identity].present? && current_writer.blank?
       @invite = Invitation.find_by_token_and_expired(params[:identity],false)
       if @invite.present?
         @writer = Writer.new(:email => @invite.email)
@@ -10,18 +10,9 @@ class WritersController < ApplicationController
         redirect_to new_writer_session_path
       end
     else
-    #   Condition to handle if params of identity not present
-      flash[:error] = "A Token is required forr registartion, contact Administrator."
+      #   Condition to handle if params of identity not present
+      flash[:error] = "A Token is required for registration, contact Administrator."
       redirect_to new_writer_session_path
-    end
-  end
-
-  def create
-    @writer = Writer.new(params[:writer])
-    if @writer.save
-      Invitation.find_by_email_and_expired(@writer.email,false).update_attribute("expired",true)
-      # sign_in_and_redirect @user, :event => :authentication
-      redirect_to :controller=>'dashboard',:action=>'index'
     end
   end
 

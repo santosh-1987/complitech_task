@@ -4,25 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :authenticate_writer!
 
-before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-def configure_permitted_parameters
-  
-  devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :current_password,:first_name,:last_name,:sex,:screen_name)}
-end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :current_password,:first_name,:last_name,:sex,:screen_name)}
+  end
 
 
-private
+  private
 
- #Redirect to a specific page on successful sign in
- def after_sign_in_path_for(resource) 
- 	if resource.is_admin == true
- 		# home_dashboard_path
+  #Redirect to a specific page on successful sign in
+  def after_sign_in_path_for(resource)
     invite_writers_home_index_path
- 	else
-     dashboard_index_path
- 	end
-   
- end
+  end
 
 end
