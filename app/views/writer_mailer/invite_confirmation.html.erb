@@ -3,7 +3,7 @@ Hi <%= @invitation.email %>!<br />
 
 <p>You have been invited to join please click on link to join us!</p><br />
 
-<%= link_to "Join Complitech Program", new_writer_url(:identity =>@invitation.token, :host => "localhost:3000")%><br/><br/>
+<%= link_to "Join Complitech Program", new_writer_url(:identity =>@invitation.token, :host => "http://invitedemo.herokuapp.com")%><br/><br/>
 
 Regards,<br/>
 Jyoti Singh

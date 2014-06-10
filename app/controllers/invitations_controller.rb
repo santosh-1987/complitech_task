@@ -19,8 +19,8 @@ class InvitationsController < ApplicationController
     emails.each do |email|
       @invitation = Invitation.new(:email => email,:expired => false)
       if @invitation.save
-         WriterMailer.delay.invite_confirmation(@invitation)
-        #WriterMailer.invite_confirmation(@invitation).deliver
+        #WriterMailer.delay.invite_confirmation(@invitation)
+        WriterMailer.invite_confirmation(@invitation).deliver
       else
         @errors << "#{email} : #{@invitation.errors.full_messages.join(",")}"
       end
