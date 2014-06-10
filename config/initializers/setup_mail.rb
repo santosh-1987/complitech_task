@@ -4,7 +4,11 @@ ActionMailer::Base.smtp_settings = {
     :port => 587,
     :domain => "imap.gmail.com",
     :authentication => :login,
-    :user_name => "email2jyotisingh@gmail.com",
-    :password => "jyoti4santosh"
+    :user_name => "santa.rchart@gmail.com",
+    :password => "MAABHAIRABI@1987"
 }
-ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+if Rails.env == "development"
+	ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+else
+	ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+end

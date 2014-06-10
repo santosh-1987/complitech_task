@@ -6,3 +6,12 @@ development:
   pool: 5
   username: root
   password: root
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: complitech_task
+  pool: 5
+  username: root
+  password: root
