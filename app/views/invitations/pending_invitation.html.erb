@@ -1,30 +1,30 @@
 <div class="row">
-        <div class="panel panel-primary filterable">
-            <div class="panel-heading">
-                <h3 class="panel-title">Invitations</h3>
-                <div class="pull-right">
-                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-                </div>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr class="filters">                        
-                        <th><input type="text" class="form-control" placeholder="Email" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Token" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Expired" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Sent On" disabled></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @invitations.each do |invitation| %>
-                    <tr>
-                        <td><%= invitation.email %></td>
-                        <td><%= invitation.token %></td>
-                        <td><%= invitation.expired %></td>
-                        <td><%= invitation.created_at %></td>
-                    </tr>
-                    <% end %>                    
-                </tbody>
-            </table>
-        </div>
+  <div class="panel panel-primary filterable">
+    <div class="panel-heading">
+      <h3 class="panel-title">Invitations</h3>
+      <div class="pull-right">
+        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+      </div>
     </div>
+    <table class="table">
+      <thead>
+      <tr class="filters">
+        <th><input type="text" class="form-control" placeholder="Email" disabled></th>
+        <th><input type="text" class="form-control" placeholder="Token" disabled></th>
+        <th><input type="text" class="form-control" placeholder="Expired" disabled></th>
+        <th><input type="text" class="form-control" placeholder="Sent On" disabled></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @invitations.each do |invitation| %>
+          <tr>
+            <td><%= invitation.email %></td>
+            <td><%= invitation.token %></td>
+            <td><%= invitation.expired %></td>
+            <td><%= invitation.created_at %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

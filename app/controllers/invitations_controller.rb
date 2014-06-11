@@ -1,7 +1,7 @@
 class InvitationsController < ApplicationController
 
   def index
-    if current_writer.is_admin == true
+    if current_writer.is_admin
       @invitations = Invitation.all
     else
       flash[:alert] = "Access Denied"
@@ -33,7 +33,12 @@ class InvitationsController < ApplicationController
   end
 
   def pending_invitation
-    @invitations = Invitation.all
+    if current_writer.is_admin == true
+      @invitations = Invitation.all
+    else
+      flash[:alert] = "Access Denied"
+      redirect_to root_path
+    end
   end
 
 end
