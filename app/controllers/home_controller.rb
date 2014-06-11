@@ -18,7 +18,7 @@ class HomeController < ApplicationController
     if current_writer.is_admin == true
 
     else
-      flash[:error] = "Access Denied"
+      flash[:notice] = "Welcome to Writer Dashboard"
       redirect_to root_path
     end
   end

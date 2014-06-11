@@ -4,7 +4,7 @@ class InvitationsController < ApplicationController
     if current_writer.is_admin
       @invitations = Invitation.all
     else
-      flash[:alert] = "Access Denied"
+      flash[:notice] = "Welcome to Writer Dashboard"
       redirect_to root_path
     end
   end
@@ -36,7 +36,7 @@ class InvitationsController < ApplicationController
     if current_writer.is_admin == true
       @invitations = Invitation.all
     else
-      flash[:alert] = "Access Denied"
+      flash[:notice] = "Welcome to Writer Dashboard"
       redirect_to root_path
     end
   end
